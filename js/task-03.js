@@ -23,7 +23,7 @@ const images = [
   },
 ];
 
-const imagesList = images.map(({ url, alt }) => {
+const imagesList = images.map(({ url, alt }) => 
   // method 1
   // const linkElement = document.createElement("li");
   // linkElement.classList.add("list-item");
@@ -41,16 +41,15 @@ const imagesList = images.map(({ url, alt }) => {
   // return linkElement;
 
   // method3
-  const imageElementTemplated = `<li><img src="${url}" alt="${alt}" width="600"></li>`;
-  return imageElementTemplated
-});
+  `<li><img src="${url}" alt="${alt}" width="600"></li>`
+).join('');
 
+ // method1 & 2
 // console.log(imagesList);
 // mainImagesUL.append(...imagesList);
 
 
 //method 3
-imagesList.reverse().forEach(element => {
-  mainImagesUL.insertAdjacentHTML('afterbegin', element);
-});
+mainImagesUL.insertAdjacentHTML('afterbegin', imagesList);
+
 
