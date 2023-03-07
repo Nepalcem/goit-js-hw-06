@@ -1,11 +1,3 @@
-// Напиши скрипт для создания галереи изображений по массиву данных. В HTML есть список ul.gallery.
-
-// <ul class="gallery"></ul>
-
-// Используй массив объектов images для создания элементов <img> вложенных в <li>. Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
-
-// Все элементы галереи должны добавляться в DOM за одну операцию вставки.
-// Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
 const mainImagesUL = document.querySelector(".gallery");
 
 const images = [
@@ -23,33 +15,33 @@ const images = [
   },
 ];
 
-const imagesList = images.map(({ url, alt }) => 
-  // method 1
-  // const linkElement = document.createElement("li");
-  // linkElement.classList.add("list-item");
-  // const imgEl = document.createElement("img");
-  // imgEl.src = url;
-  // imgEl.alt = alt;
-  // imgEl.width = 600;
-  // linkElement.append(imgEl);
-  // return linkElement;
+const imagesList = images
+  .map(
+    ({ url, alt }) =>
+      // method 1
+      // const linkElement = document.createElement("li");
+      // linkElement.classList.add("list-item");
+      // const imgEl = document.createElement("img");
+      // imgEl.src = url;
+      // imgEl.alt = alt;
+      // imgEl.width = 600;
+      // linkElement.append(imgEl);
+      // return linkElement;
 
-  // method2
-  // const imageElementTemplated = `<img src="${url}" alt="${alt}" width="600">`;
-  // const linkElement = document.createElement("li");
-  // linkElement.insertAdjacentHTML("afterbegin", imageElementTemplated);
-  // return linkElement;
+      // method2
+      // const imageElementTemplated = `<img src="${url}" alt="${alt}" width="600">`;
+      // const linkElement = document.createElement("li");
+      // linkElement.insertAdjacentHTML("afterbegin", imageElementTemplated);
+      // return linkElement;
 
-  // method3
-  `<li><img src="${url}" alt="${alt}" width="600"></li>`
-).join('');
+      // method3
+      `<li><img src="${url}" alt="${alt}" width="600"></li>`
+  )
+  .join("");
 
- // method1 & 2
+// method1 & 2
 // console.log(imagesList);
 // mainImagesUL.append(...imagesList);
 
-
 //method 3
-mainImagesUL.insertAdjacentHTML('afterbegin', imagesList);
-
-
+mainImagesUL.insertAdjacentHTML("afterbegin", imagesList);

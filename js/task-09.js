@@ -1,5 +1,3 @@
-// Напиши скрипт, который изменяет цвета фона элемента <body> через инлайн стиль при клике на button.change-color и выводит значение цвета в span.color.
-
 const buttonColorToggler = document.querySelector(".change-color");
 const resultingColor = document.querySelector(".color");
 
